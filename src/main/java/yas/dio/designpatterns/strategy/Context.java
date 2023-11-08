@@ -1,10 +1,10 @@
 package yas.dio.designpatterns.strategy;
 
-public class Client {
+public class Context {
 
     private Strategy strategy;
 
-    public Client usingStrategy(String strategy) {
+    public Context usingStrategy(String strategy) {
         this.strategy = loadStrategy(strategy);
         return this;
     }

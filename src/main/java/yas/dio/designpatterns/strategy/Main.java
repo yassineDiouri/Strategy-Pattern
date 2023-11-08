@@ -5,12 +5,12 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        Client client = new Client();
+        Context context = new Context();
         while (true) {
             try {
                 Scanner scanner = new Scanner(System.in);
                 String strategy = scanner.next();
-                client.usingStrategy(strategy).execute();
+                context.usingStrategy(strategy).execute();
             } catch (IllegalArgumentException e) {
                 System.out.println(e.getMessage());
             }
