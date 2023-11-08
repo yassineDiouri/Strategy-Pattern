@@ -4,8 +4,8 @@ public class Context {
 
     private Strategy strategy;
 
-    public Context usingStrategy(String strategy) {
-        this.strategy = loadStrategy(strategy);
+    public Context setStrategy(Strategy strategy) {
+        this.strategy = strategy;
         return this;
     }
 
@@ -13,12 +13,4 @@ public class Context {
         this.strategy.execute();
     }
 
-    private Strategy loadStrategy(String strategy) {
-        return switch (strategy) {
-            case "impl1" -> new StrategyImpl1();
-            case "impl2" -> new StrategyImpl2();
-            case "impl3" -> new StrategyImpl3();
-            default -> throw new IllegalArgumentException("There is no defined strategy for : " + strategy);
-        };
-    }
 }
